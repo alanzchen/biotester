@@ -1,0 +1,45 @@
+html {
+  background-color: #ffffff;
+  background-image: url(../images/demo-background.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+}
+body {
+  padding-left: 0;
+  padding-right: 0;
+  background: transparent;
+}
+#hero-container {
+  padding: 60px 0px 60px 0px;
+}
+#nav-bar .navbar-inner {
+  background: rgba(255, 255, 255, 0.278431);
+  border: none;
+  -moz-box-shadow: 0px 1px 99px 0px rgba(0, 0, 0, 0.0666667);
+  -webkit-box-shadow: 0px 1px 99px 0px rgba(0, 0, 0, 0.0666667);
+  -o-box-shadow: 0px 1px 99px 0px rgba(0, 0, 0, 0.0666667);
+  box-shadow: 0px 1px 99px 0px rgba(0, 0, 0, 0.0666667);
+  padding-left: 20px;
+  padding-right: 20px;
+}
+#nav-bar .brand {
+  text-shadow: none;
+  font-weight: bold;
+  font-size: 16px;
+  color: #ffffff;
+}
+#title {
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.129412);
+  color: #000000;
+  font-size: 30px;
+  font-weight: normal;
+  text-align: center;
+}
+#subtitle {
+  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.168627);
+  font-weight: normal;
+  font-size: 20px;
+  text-align: center;
+  color: #f0f0f0;
+}
