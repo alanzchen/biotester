@@ -33,7 +33,7 @@ $(document).ready(function(){
 function ranInt(len){return Math.floor(Math.random()*len);}
 function maskHowMany(len)
 {
-if(len==1){alert('喵?!');return 0;}
+if(len==1)return 0;
 if(len<=3)return 1;
 return (len/2)|0;
 }
