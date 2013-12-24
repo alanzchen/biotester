@@ -1,0 +1,116 @@
+<!doctype>
+<html>
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf8">
+<title>背生物啦，学渣！ 离线版本</title>
+<style>
+span , p {
+	font-size:24pt;
+}
+p {
+	background:#eeffee;
+}
+</style>
+</head>
+<body>
+<div>
+<p><span>蔗糖水解生成{葡萄糖}和{果糖}；乳糖水解生成{葡萄糖}和{半乳糖}；麦芽糖水解生成{两份葡萄糖}。</span></p>
+<p><span>蛋白质主要由{C、H、O、N} 4 种元素组成，很多蛋白质还含有{P、S}元素，有的也含有微量的{Fe、Cu、Mn、I、Zn}等元素。</span></p>
+</div>
+
+<script src="jquery-1.9.0.min.js"></script>
+<script>
+$(document).ready(function(){
+  t=[];
+  var t2=$('p');
+  $('p').each(function(i,x){
+    if($(x).text().replace(/\s/g,'').length)t.push(x);
+  });
+  
+  $('body').text('');
+});
+
+function ranInt(len){return Math.floor(Math.random()*len);}
+function maskHowMany(len)
+{
+if(len==1){alert('喵?!');return 0;}
+if(len<=3)return 1;
+return (len/2)|0;
+}
+
+function myF()
+{
+var i;
+for(i=0;i<100+ranInt(50);i++)Math.random();
+
+var n=ranInt(t.length);
+var elem=t[n];
+console.log(elem)
+var text=$(elem).text();
+console.log(text);
+var arr=text.match(/\{.*?}/g);
+var arr2=[];
+//for(i=0;i<arr.length;i++)
+for(i in arr)
+if(arr[i])
+arr2.push(arr[i]);
+
+var arr3=[];
+for(i in arr2)arr3[i]=ranInt(10000)*2;
+var arrl=maskHowMany(arr2.length);
+for(i=0;i<arrl;i++)arr3[i]+=1;
+console.log(arr3);
+arr3.sort(function(a,b){return a-b;});
+for(i in arr3)arr3[i]=arr3[i]%2;
+console.log(arr3);
+
+var arr4=[];
+
+var elem=document.createElement('span');
+console.log(text);
+text=text.replace(/{([^}]*)}/g,'<span class="mask" style="background-color: black; background-position: initial initial; background-repeat: initial initial;">$1</span>');
+console.log(text);
+elem.innerHTML=text;
+document.body.appendChild(elem);
+$('.mask').css('background','black');
+$('.mask').hover(
+	function(){
+		$(this).css('background','white');
+	},
+	function(){
+		$(this).css('background','black');
+	}
+);
+
+var link=document.createElement('p');
+$(link).html('Display Ans');
+document.body.appendChild(link);
+$(link).click(
+	function(){
+		$('.mask').css('background','#fff');
+		$('.mask').css('color','#f55');
+	}
+);
+
+var next=document.createElement('p');
+$(next).html('Next');
+document.body.appendChild(next);
+$(next).click(
+	function(){
+myR();myF();
+	}
+);
+
+return arr4;
+}
+
+function myR()
+{
+  $('span').remove();
+  $('p').remove();
+}
+
+$(document).ready(myF);
+</script>
+</body>
+</html>
