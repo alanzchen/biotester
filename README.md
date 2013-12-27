@@ -1,7 +1,7 @@
 bio(logy) tester
 =========
 
- 帮助天朝高中生背诵生物基础知识的小网页。原本是用于背语文的，经过粗略的更改后可以遮挡任意用{}标记的内容，来达到背东西的目的。
+ 帮助天朝高中生背诵基础知识的网页。最开始被用于背文言文，经过粗略的更改后可以遮挡任意用{}标记的内容，来达到考察缺漏知识点的目的。 
 
  如何使用?
 --------------------------------------
@@ -16,6 +16,8 @@ bio(logy) tester
 --------------------------------------
 显然可以。然而你可能需要一份离线的[jQuery](https://github.com/jquery/jquery/)，同时更改``bio.html``中的jQuery引用部分。
 注意，目前使用的是``http://code.jquery.com/jquery-1.9.0.min.js``，其他版本**并未**经过测试。
+
+``bio-offline-pack``中包含了所有离线使用需要的文件，并且经过粗略的美化。``bio.html``和``bio-offline``是（极端）轻量级的版本。
  Credit
 --------------------------------------
 Originally By [@cxqn](https://twitter.com/cxqn) Edited by [@c_discrete](http://discrete.tk)
