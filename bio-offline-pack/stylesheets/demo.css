@@ -5,6 +5,7 @@ html {
   background-position: top center;
   background-size: cover;
   background-attachment: local;
+  height: 100%;
 }
 body {
   padding-left: 0;
