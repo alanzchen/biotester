@@ -4,7 +4,7 @@ html {
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
-  background-attachment: local;
+  background-attachment: fixed;
   height: 100%;
 }
 body {
