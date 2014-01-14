@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Limelight|Flamenco|Federo|Yesteryear|Josefin Sans|Spinnaker|Sansita One|Handlee|Droid Sans|Oswald:400,300,700" media="screen" rel="stylesheet" type="text/css" />
+    <!-- <link href="https://fonts.googleapis.com/css?family=Limelight|Flamenco|Federo|Yesteryear|Josefin Sans|Spinnaker|Sansita One|Handlee|Droid Sans|Oswald:400,300,700" media="screen" rel="stylesheet" type="text/css" /> -->
     <link href="stylesheets/bootstrap.css" media="screen" rel="stylesheet" type="text/css" />
     <link href="stylesheets/bootstrap-responsive.css" media="screen" rel="stylesheet" type="text/css" />
     <link href="stylesheets/common.css" media="screen" rel="stylesheet" type="text/css" />
@@ -22,13 +22,13 @@
       <div class="navbar" id="nav-bar">
         <div class="navbar-inner">
           <a class="brand" href="https://github.com/cdiscrete/biotester"><i class="icon icon-github"></i>biotester
-            <span class="badge">offline</span>
+          <span class="badge" id="status"><i class="icon icon-info-sign"></i>ERROR: An unexpected critical error was detected.</span></a>
           </a>
         </div>
       </div>
       <h1 class="heading" id="title">
-<p>{葡萄糖}和{果糖}；乳糖水解生成{葡萄糖}和{半乳糖}；麦芽糖水解生成{两份葡萄糖}。</p>
-<p>还原糖包括{葡萄糖}、{果糖}、{麦芽糖}、{乳糖}。</p>
+<p>细胞的减数分裂是指{有性}生殖的生物产生{有性生殖细胞}的过程，细胞连续分裂{2}次，而染色体只复制{1}次，结果子细胞中的染色体数量{减半}的细胞分裂过程。减数分裂与有丝分裂过程的区别是减数分裂产生的子细胞是{有性生殖细胞}，而有丝分裂产生{体细胞}；减数分裂细胞连续分裂2次，而染色体复制1次，{有}联会、四分体和同源染色体的分离现象；有丝分裂染色体复制和细胞分裂均为1次，{无}联会和同源染色体分离等现象。</p>
+<p>{细胞的减数分裂}是指有性生殖的生物产生有性生殖细胞的过程，细胞连续分裂{2}次，而染色体只复制{1}次，结果子细胞中的{染色体}数量减半的细胞分裂过程。减数分裂与有丝分裂过程的区别是{减数分裂}产生的子细胞是有性生殖细胞，而{有丝分裂}产生体细胞；减数分裂细胞连续分裂2次，而染色体复制1次，有联会、四分体和{同源染色体}的分离现象；有丝分裂染色体复制和细胞分裂均为1次，无联会和{同源染色体分离}等现象。</p>
       </h1>
       <h2 class="heading" id="subtitle">
         <button id="next" class="btn btn-success"><i class="icon icon-ok-sign"></i>Next</button>
@@ -42,6 +42,8 @@ $(document).ready(function(){
   var t2=$('p');
   $('p').each(function(i,x){
     if($(x).text().replace(/\s/g,'').length)t.push(x);
+    var loadstatus="Now loading No." + i;
+    document.getElementById('status').innerHTML=loadstatus;
   });
   //$('body').text('');
   $('#disp').click(function(){
@@ -68,7 +70,6 @@ for(i=0;i<100+ranInt(50);i++)Math.random();
 
 var n=ranInt(t.length);
 var elem=t[n];
-console.log(elem)
 var text=$(elem).text();
 console.log(text);
 var arr=text.match(/\{.*?}/g);
@@ -95,6 +96,8 @@ text=text.replace(/{([^}]*)}/g,'<span class="mask" style="background-color: blac
 console.log(text);
 var text='<span id="question">' + text + '</span>';
 console.log(text);
+var status='<i class="icon icon-info-sign"></i>' + n + " of " + t.length + ".";
+document.getElementById('status').innerHTML=status;
 document.getElementById('title').innerHTML=text;
 $('.mask').css('background','black');
 $('.mask').hover(
@@ -114,7 +117,6 @@ function myR()
   $('#question').remove();
   $('p').remove();
 }
-
 $(document).ready(myF);
 </script>
   </body>
