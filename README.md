@@ -1,9 +1,14 @@
+
 bio(logy) tester
 =========
 
- 帮助天朝高中生背诵基础知识的网页。最开始被用于背文言文，经过粗略的更改后可以遮挡任意用{}标记的内容，来达到考察缺漏知识点的目的。 
+帮助天朝高中生背诵基础知识的网页。最开始被用于背文言文，经过粗略的更改后可以遮挡任意用`{}`标记的内容，来达到考察缺漏知识点的目的。 
 
- 如何使用?
+## 示例
+
+在 `bio-offline-pack` 中，`biology.html chem.html chn.html ` 分别是自己整理的生物、化学和语文拼音考点（最后整理于 2014 年 6 月）。 
+
+如何使用?
 --------------------------------------
 打开``bio.html``，找到第一份示例：
 ```html
@@ -12,21 +17,23 @@ bio(logy) tester
 其中，用``{*}``标记的就是要遮挡的内容。
 要添加多个项目，只需在``<body></body>``之间添加形如以上的内容即可。
 打开网页后，将随机选取其中一个项目测试。
- 离线使用?
+离线使用?
 --------------------------------------
-显然可以。然而你可能需要一份离线的[jQuery](https://github.com/jquery/jquery/)，同时更改``bio.html``中的jQuery引用部分。
+显然可以。然而你可能需要一份离线的 [jQuery](https://github.com/jquery/jquery/)，同时更改``bio.html``中的jQuery引用部分。
 注意，目前使用的是``http://code.jquery.com/jquery-1.9.0.min.js``，其他版本**并未**经过测试。
 
 ``bio-offline-pack``中包含了所有离线使用需要的文件，并且经过粗略的美化。``bio.html``和``bio-offline``是（极端）轻量级的版本。
- Credit
+Credit
 --------------------------------------
-Originally By [@cxqn](https://twitter.com/cxqn) Edited by [@c_discrete](http://discrete.tk)
+Originally By [@cxqn](https://twitter.com/cxqn)
 
- 协议
+Edited by [@alanzchen](https://zenan.ch)
+
+协议
 --------------------------------------
 ```
 /*
- * Copyright (C) 2013 Discrete Chen
+ * Copyright (C) 2013 Alan Chen
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
